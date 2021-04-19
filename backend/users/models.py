@@ -32,3 +32,9 @@ class User(AbstractBaseUser, PermissionsMixin, IndexedTimeStampedModel):
 
     def __str__(self):
         return self.email
+
+
+class Person(models.Model):
+    name = models.CharField(max_length=200)
+    address = models.CharField(max_length=500)
+    account = models.ForeignKey("users.User", on_delete=models.CASCADE, blank=True, null=True)
