@@ -11,6 +11,9 @@ STATE_CHOICES = [
 class Equipment(models.Model):
     name = models.CharField(max_length=200)
 
+    def __str__(self):
+        return self.name
+
 
 class Item(models.Model):
     kind = models.ForeignKey("equipment.Equipment", on_delete=models.CASCADE, related_name="+")
