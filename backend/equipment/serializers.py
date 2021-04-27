@@ -10,6 +10,9 @@ class EquipmentSerializer(serializers.ModelSerializer):
 
 
 class ItemSerializer(serializers.ModelSerializer):
+    kind = serializers.SerializerMethodField()
+    person = serializers.SerializerMethodField()
+
     class Meta:
         model = Item
         fields = [
@@ -23,3 +26,9 @@ class ItemSerializer(serializers.ModelSerializer):
             "registered_date",
             "return_date",
         ]
+
+    def get_kind(self, obj):
+        return obj.kind.name
+
+    def get_person(self, obj):
+        return obj.person.name
