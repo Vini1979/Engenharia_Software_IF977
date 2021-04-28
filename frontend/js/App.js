@@ -9,7 +9,7 @@ import { Switch, BrowserRouter, Route } from "react-router-dom";
 
 import ListarEquipamentos from "./pages/listarEquipamentos/listarEquipamentos";
 import ListarFuncionarios from "./pages/listarFuncionarios/listarFuncionarios";
-// import CadastrarRelacao from "../pages/cadastrarRelacoes/cadastro";
+import CadastrarRelacao from "./pages/cadastrarRelacoes/cadastro";
 
 const store = configureStore({});
 const App = () => (
@@ -20,7 +20,7 @@ const App = () => (
         <Route path="/" component={Home} />
         <Route path="/listar-equipamentos" component={ListarEquipamentos} />
         <Route path="/listarFuncionarios" component={ListarFuncionarios} />
-        {/* <Route path="/cadastrarRelacao" component={CadastrarRelacao} /> */}
+        <Route path="/cadastrarRelacao" component={CadastrarRelacao} />
       </Switch>
     </BrowserRouter>
     </Provider>
