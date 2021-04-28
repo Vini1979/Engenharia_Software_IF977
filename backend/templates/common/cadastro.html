@@ -8,82 +8,20 @@
     <link rel="shortcut icon" href="#" />
   
     <style>
-        .container {
-            width: 100%;
-            height: 100%;
-        }
-        .asideContainer{
-    position: relative;
-    left: 0;
-  }
-  
-  .header {
-  
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    padding: 20px;
-    background: #8b8b83;
-  
-}
-    .header h1 {
-    font-size: 28px;
-    color: #000000;
-    text-align: center;
-    }
-
-    .header svg {
-    width: 100px;
-    height: 30px;
-    position: absolute;
-    left: 30px;
-    color: #000000;
-    cursor: pointer;
-    }
-  
-  .main{
-  
-    background-color: #ffffff;
-    width: 81%;
-    height: 85vh;
-    margin: 0 auto;
-    margin-top: 15px;
-    border: 3px solid #8b8b83;
-    border-radius: 8px;
-    overflow-y: scroll;
-  
-    position: relative;
-  }
-
-  .main button {
-      position: absolute;
-      right: 30px;
-      margin-top: 25px;
-  
-      width: 80px;
-      height: 40px;
-  
-      border-radius: 8px;
-  
-      background-color: #ffffff;
-      color: #8b8b83;
-  
-      cursor: pointer;
-    }
-.main button:active {
-        background-color: #8b8b83;
-        transition: 0.2s;
-        color: #000000;
+      .container {
+          width: 100%;
+          height: 100%;
       }
-  .form{
-    display: flex;
-    align-items: center;
-    justify-content: space-around;
-    flex-wrap: wrap;
-  
-    margin-top: 20px;
-    box-sizing: border-box;
-  }
+      .form-container {
+        width: 50vw;
+      }
+      form {
+        display: grid;
+      }
+
+      .save-button {
+        margin-top: 20px;
+      }
     </style>
   </head>
 
@@ -91,11 +29,11 @@
     <header>
         <h1>Cadastrar Relacões</h1>
     </header>
-    <main>
+    <main class="form-container">
         <form method="post">
             {% csrf_token %}
             {{ form }}
-            <input type="submit" value="Save">
+            <input type="submit" value="Save" class="save-button">
         </form>
     </main>
 </div>

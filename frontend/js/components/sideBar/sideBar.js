@@ -62,7 +62,7 @@ const SideBar = () => {
               </MenuItem>
               <MenuItem icon={<FiPlus />}>
                 Cadastrar
-                <Link to="/cadastrar-relacao" />
+                <a href="/cadastrar-relacao" />
               </MenuItem>
               <MenuItem icon={<FiUsers />}>
                 Funcionários
