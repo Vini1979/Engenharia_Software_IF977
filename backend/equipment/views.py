@@ -7,7 +7,7 @@ from equipment.forms import CreateItemForm
 
 
 class CreateItemView(LoginRequiredMixin, CreateView):
-    template_name = "common/index.html"
+    template_name = "common/cadastro.html"
     form_class = CreateItemForm
     model = Item
 
