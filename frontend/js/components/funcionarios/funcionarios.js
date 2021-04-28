@@ -1,3 +1,5 @@
+import axios from 'axios';
+
 import React, { Component } from "react";
 
 import { Container, ContainerInter, Title } from "./styles";
@@ -10,6 +12,7 @@ class Funcionarios extends Component {
     axios
       .get(`/api/people`)
       .then((response) => {
+        console.log(response);
         this.setState({ funcionarios: response.data.results });
         return response.data;
       })
@@ -21,48 +24,23 @@ class Funcionarios extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      funcionarios: [
-        { seqfuncionario: 1, nome: "Pedro", endereco: "Rua1", detailsOpen: true },
-        {
-          seqfuncionario: 2,
-          nome: "Victoria",
-          endereco: "Rua2",
-          detailsOpen: false
-        },
-        {
-          seqfuncionario: 3,
-          nome: "Vinícius",
-          endereco: "Rua3",
-          detailsOpen: true
-        }
-      ]
+      funcionarios: []
     };
   }
 
-  toggleDetailsOpen(index){
-    let funcionarios = [...this.state.funcionarios];
-    let detailValue = funcionarios[index].detailsOpen;
-    funcionarios[index] = {
-      ...funcionarios[index],
-      detailsOpen: !detailValue
-    };
-    this.setState({ funcionarios });
-  };
-
   render() {
+    if (!this.state.funcionarios) {
+      return 'Loading'
+    }
     return (
       <Container>
         {this.state.funcionarios.map((funcionario, index) => (
           <ContainerInter>
-            <Title onClick={() => this.toggleDetailsOpen(index)} key={index}>
-              {this.state.funcionarios[index].detailsOpen ? (
+            <Title key={index}>
                 <FiChevronDown />
-              ) : (
-                <FiChevronRight />
-              )}
-              <h1>{funcionario.nome}</h1>
+              <h1>{funcionario.name}</h1>
             </Title>
-            {this.state.funcionarios[index].detailsOpen ? <FuncTable /> : <></>}
+            <FuncTable funcionario={funcionario.name} />
           </ContainerInter>
         ))}
       </Container>
