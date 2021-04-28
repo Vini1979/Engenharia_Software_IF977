@@ -6,10 +6,10 @@ clean:
 	@find . -name "__pycache__" -delete
 
 test:
-	python backend/manage.py test backend/ $(ARG) --parallel --keepdb
+	python backend/manage.py test backend/$(ARG) --parallel --keepdb
 
 test_reset:
-	python backend/manage.py test backend/ $(ARG) --parallel
+	python backend/manage.py test backend/$(ARG) --parallel
 
 backend_format:
 	black backend

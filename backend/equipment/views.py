@@ -12,4 +12,4 @@ class CreateItemView(LoginRequiredMixin, CreateView):
     model = Item
 
     def get_success_url(self):
-        return reverse_lazy("common:index")
+        return reverse_lazy("common:retrieve_update_delete_equipment")
