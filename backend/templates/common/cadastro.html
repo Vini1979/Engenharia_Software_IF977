@@ -92,7 +92,10 @@
         <h1>Cadastrar Relacões</h1>
     </header>
     <main>
-        {{ form }}
-        <input type="submit" value="Save">
+        <form method="post">
+            {% csrf_token %}
+            {{ form }}
+            <input type="submit" value="Save">
+        </form>
     </main>
 </div>
