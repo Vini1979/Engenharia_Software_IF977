@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import { Link } from "react-router-dom";
-
+import axios from 'axios';
 import { Container, Header, AsideContainer, Main } from "./styles";
 import SideBar from "../../components/sideBar/sideBar";
 
@@ -18,7 +18,7 @@ class ListarFuncionarios extends Component {
         </Header>
 
         <Main>
-          <Funcionarios />
+          <Funcionarios/>
         </Main>
       </Container>
     );

@@ -5,9 +5,21 @@ import { FiChevronRight, FiChevronDown } from "react-icons/fi";
 import FuncTable from "../funcTable/funcionarios";
 
 class Funcionarios extends Component {
+
+  async componentDidMount() {
+    axios
+      .get(`/api/people`)
+      .then((response) => {
+        this.setState({ funcionarios: response.data.results });
+        return response.data;
+      })
+      .catch((error) => {
+        console.log(error);
+      });
+  }
+
   constructor(props) {
     super(props);
-
     this.state = {
       funcionarios: [
         { seqfuncionario: 1, nome: "Pedro", endereco: "Rua1", detailsOpen: true },
