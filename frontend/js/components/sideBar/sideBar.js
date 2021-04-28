@@ -62,15 +62,15 @@ const SideBar = () => {
               </MenuItem>
               <MenuItem icon={<FiPlus />}>
                 Cadastrar
-                <Link to="/cadastrarRelacao" />
+                <Link to="/cadastrar-relacao" />
               </MenuItem>
               <MenuItem icon={<FiUsers />}>
                 Funcionários
-                <Link to="listarFuncionarios" />
+                <Link to="listar-funcionarios" />
               </MenuItem>
               <MenuItem icon={<FiMonitor />}>
                 Equipamentos
-                <Link to="/listarEquipamentos" />
+                <Link to="/" />
               </MenuItem>
               <MenuItem icon={<BiCog />}>Configurações</MenuItem>
             </Menu>
