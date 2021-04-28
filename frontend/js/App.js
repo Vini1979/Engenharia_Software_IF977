@@ -18,7 +18,6 @@ const App = () => (
       <Switch>
         <Route exact path="/" component={ListarEquipamentos} />
         <Route path="/listar-funcionarios" component={ListarFuncionarios} />
-        <Route path="/cadastrar-relacao" component={CadastrarRelacao} />
       </Switch>
     </BrowserRouter>
     </Provider>

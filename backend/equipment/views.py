@@ -1,3 +1,15 @@
-from django.shortcuts import render
+from django.views.generic import CreateView
+from django.contrib.auth.mixins import LoginRequiredMixin
+from django.urls import reverse_lazy
 
-# Create your views here.
+from equipment.models import Item
+from equipment.forms import CreateItemForm
+
+
+class CreateItemView(LoginRequiredMixin, CreateView):
+    template_name = "common/index.html"
+    form_class = CreateItemForm
+    model = Item
+
+    def get_success_url(self):
+        return reverse_lazy("index")
