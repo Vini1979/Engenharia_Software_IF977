@@ -1,0 +1,97 @@
+#header {
+    position: absolute;
+    width: 220px;
+  }
+  #header .pro-sidebar {
+    height: 100vh;
+  }
+  #header .closemenu {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #000000;
+    position: absolute;
+    right: 27px;
+    z-index: 9999;
+    line-height: 20px;
+    border-radius: 50%;
+    font-weight: bold;
+    font-size: 28px;
+    top: 20px;
+    cursor: pointer;
+  }
+  
+  #header .closemenu :hover {
+    color: #ffffff;
+  }
+  
+  #header .closemenu h3 {
+    color: #000;
+    font-size: 22px;
+    margin-right: 10px;
+  }
+  
+  #header .pro-sidebar {
+    width: 100%;
+    min-width: 100%;
+  }
+  #header .pro-sidebar.collapsed {
+    width: 85px;
+    min-width: 80px;
+  }
+  #header .pro-sidebar-inner {
+    background-color: #8b8b83;
+  }
+  #header .pro-sidebar-inner .pro-sidebar-layout {
+    overflow-y: hidden;
+  }
+  
+  #header .pro-sidebar-inner .pro-sidebar-layout ul {
+    padding: 0 5px;
+    margin-top: 55px;
+  }
+  
+  #header .pro-sidebar-inner .pro-sidebar-layout ul .pro-inner-item {
+    color: #000000;
+    margin: 10px 0px;
+    font-weight: bold;
+  }
+  
+  #header
+    .pro-sidebar-inner
+    .pro-sidebar-layout
+    ul
+    .pro-inner-item
+    .pro-icon-wrapper {
+    background-color: #ffffff;
+    color: #000;
+    border-radius: 20px;
+  }
+  
+  #header
+    .pro-sidebar-inner
+    .pro-sidebar-layout
+    ul
+    .pro-inner-item
+    .pro-icon-wrapper
+    .pro-item-content {
+    color: #000000;
+  }
+  
+  #header .pro-sidebar-inner .pro-sidebar-layout .pro-inner-item:hover {
+    background-image: linear-gradient(0deg, #20201f 0%, #64635f 100%);
+  }
+  
+  #header .pro-sidebar-inner .pro-sidebar-layout .active {
+    background-image: linear-gradient(0deg, #20201f 0%, #64635f 100%);
+  }
+  #header .logo {
+    padding: 20px;
+  }
+  
+  @media only screen and (max-width: 720px) {
+    html {
+      overflow: hidden;
+    }
+  }
+  
